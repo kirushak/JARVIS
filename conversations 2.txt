@@ -29,7 +29,7 @@ def favourite():
 def exam():
     if "exam tomorrow" in query:
         speak("I hope that you prepared well and you will do well! All the best")
-    elif "Didn't prepare" in query:
+    elif "didn't prepare" in query:
         speak("Sorry to hear that...But I'm always here to help you")
     elif "full prepared" in query:
         speak("Nice to hear that.Best of Luck")
