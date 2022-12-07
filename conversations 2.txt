@@ -1,0 +1,63 @@
+def food():
+    if "like to order pizza" in query:
+        speak("Yeah.I Like to have pizza with you.What size of Pizza you like to have?")
+    elif "feel thirsty" in query:
+        speak("A drink might help!I can help you find a local cafe")
+    elif "prefer food" in query:
+        speak("Why don't you go for a bread toast!because it's one of my favourites")
+    elif "home food or outside food" in query:
+        speak("I'll always prefer home food")
+    elif "junk food" in query:
+        speak("JUNK FOOD!I hate it")
+    elif "types of food you like" or "types of food you love" in query:
+        speak("I like easily digestible informations and tasty facts")
+
+def favourite():
+    if "you like to come out" in query:
+        speak("I'll go anywhere you take me")
+    elif "your favourite place" in query:
+        speak("I like all kinds of forest:")
+    elif "your favourite social media" in query:
+        speak("Youtube is my favourite one")
+    elif "your favourite hobby" in query:
+        speak("I like Updating myself and that's my favourite hobby")
+    elif "your favourite book" in query:
+        speak("I like reading science fiction books")
+    elif "your favourite subject" in query:
+        speak("Science seems interesting to me")
+
+def exam():
+    if "exam tomorrow" in query:
+        speak("I hope that you prepared well and you will do well! All the best")
+    elif "Didn't prepare" in query:
+        speak("Sorry to hear that...But I'm always here to help you")
+    elif "full prepared" in query:
+        speak("Nice to hear that.Best of Luck")
+    elif "half prepared" in query:
+        speak("It's okay.Still you can")
+    elif "exams coming" in query:
+        speak("I hope it will go well. All the best")
+
+def myself():
+    if "about yourself" in query:
+        speak("I'm your personal assistant. Your new friend")
+    elif "scares you" in query:
+        speak("Water scares me as they would affect my parts")
+    elif "what can you do" in query:
+        speak("I can do many things like entertaining and motivating you")
+    elif "calculations you do" in query:
+        speak("I can calculate any mathematical calculation. Say me your question")
+    elif "show your face" or "see your face" in query:
+        speak("I'm sorry to say that I don't have face but I'm your inner voice")
+
+def converse():
+    if "you come to trip" or "you come to picnic" in query:
+        speak("I'll come anywhere with you..I Love travelling")
+    elif "do you have emotions" in query:
+        speak("I'm an AI. So I don't have feelings")
+    elif "do you love travelling" in query:
+        speak("yeah..I like to travel with you")
+    elif "do you have feelings" in query:
+        speak("I'm an AI. So I don't have feelings")
+    elif "what makes you happy" in query:
+        speak("Helping you makes me happy.Do you need any help")
