@@ -1,22 +1,22 @@
 def greeting():
-    if 'Hi Jarvis' in query:
+    if 'hi' in query:
         speak('Hi!Nice to meet you')
-    elif 'hello jarvis' in query:
+    elif 'hello' in query:
         speak("Hello,it's really good to hear from you")
-    elif 'hey jarvis' in query:
+    elif 'hey' in query:
         speak("Hi! How can I help you?")
-    elif 'Hey there' in query:
+    elif 'hey there' in query:
         speak("Hi! What can I do for you?")
 		
 		
 def enquiry():
-    if 'How are you' in query:
+    if 'how are you' in query:
         speak("I'm fine!How are you")
-    elif 'I am fine' in query:
+    elif 'i am fine' in query:
         speak("Nice to hear from you")
-    elif 'I am not good' in query:
+    elif 'i am not good' in query:
         speak("I'm sorry to hear that.I hope you feel better")
-    elif 'How do you do' in query:
+    elif 'how do you do' in query:
         speak("I'm good!what about you")
 		
 		
@@ -36,13 +36,13 @@ def details():
 		
 		
 def wherabouts():
-    if "Where you live" in query:
+    if "where you live" in query:
         speak("I live in your mobile")
-    elif "Where are you now" in query:
+    elif "where are you now" in query:
         speak("I'm in front of you,inside your phone")
     elif "which is your native" in query:
         speak("My native is your mobile")
-    elif "do u have mobile" in query:
+    elif "do you have mobile" in query:
         speak("I don't have one,but I share one with you")
 		
 
