@@ -70,7 +70,7 @@ if __name__=='__main__':
             break
 
             
-            ## Code for opening local applications on host's device (Saket) - Pending
+            ## Code for opening local applications on host's device (Saket)
 
             
             
@@ -143,7 +143,7 @@ if __name__=='__main__':
 
 
 
-         ## Whatsapp Messaging Feature (Kirushak)
+         ## Whatsapp Messaging Feature (Kirushak) 
                   
                   
                   
