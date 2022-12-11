@@ -1,11 +1,15 @@
-import pyttsx3
 import speech_recognition as sr
+import pyttsx3
 import datetime
 import wikipedia
 import webbrowser
 import os
-import smtplib
-import pyjokes
+import time
+import subprocess
+from ecapture import ecapture as ec
+import wolframalpha
+import json
+import requests
 import pywhatkit
 
 engine = pyttsx3.init('sapi5')
@@ -50,35 +54,73 @@ def takeCommand():
         return "None"
     return query
 
-if __name__ == "__main__":
-    wishme()
-    while True:
-        query = takeCommand().lower()
+## Edited
 
-        if 'wikipedia' in query:
+if __name__=='__main__':
+
+
+    while True:
+        speak("Tell me how can I help you now?")
+        statement = takeCommand().lower()
+        if statement==0:
+            continue
+
+        if "good bye" in statement or "ok bye" in statement or "stop" in statement:
+            speak('Your personal assistant JARVIS is shutting down,Good bye')
+            print('Your personal assistant JARVIS is shutting down,Good bye'
+            break
+                  
+                   if 'wikipedia' in statement:
             speak('Searching Wikipedia...')
-            query = query.replace("wikipedia", "")
-            results = wikipedia.summary(query, sentences=2)
+            statement =statement.replace("wikipedia", "")
+            results = wikipedia.summary(statement, sentences=3)
             speak("According to Wikipedia")
             print(results)
             speak(results)
 
-        elif 'open youtube' in query:
-            webbrowser.open("youtube.com")
+        elif 'open youtube' in statement:
+            webbrowser.open_new_tab("https://www.youtube.com")
+            speak("youtube is open now")
+            time.sleep(5)
 
-        elif 'open google' in query:
-            webbrowser.open("google.com")
-
-
-        elif 'current time' in query:
-            strTime = datetime.datetime.now().strftime("%H:%M:%S")
-            speak(f"Sir, the time is {strTime}")
-
-        elif 'joke' in query :
-            speak(pyjokes.get_joke())
-
-        else :
-            speak("sorry sir i can't catch you")
+        elif 'open google' in statement:
+            webbrowser.open_new_tab("https://www.google.com")
+            speak("Google chrome is open now")
+            time.sleep(5)
+ 
+        elif 'open gmail' in statement:
+            webbrowser.open_new_tab("gmail.com")
+            speak("Google Mail open now")
+            time.sleep(5)
 
 
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+          elif "log off" in statement or "sign out" in statement:
+            speak("Ok , your pc will log off in 10 sec make sure you exit from all applications")
+            subprocess.call(["shutdown", "/l"])
+             time.sleep(3)
+ 
+    
 
