@@ -9,7 +9,8 @@ import subprocess
 import wolframalpha
 import requests
 import pywhatkit
-
+from random import choice
+from pprint import pprint
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -74,15 +75,25 @@ if __name__=='__main__':
 
             
             
+         def find_my_ip():
+           ip_address = requests.get('https://api64.ipify.org?format=json').json()
+           return ip_address["ip"]
+        
+        
+         if 'ip address' in statement:
+            ip_address = find_my_ip()
+            speak(f'Your IP Address is {ip_address}.\n Printing your IP address on the screen.')
+            print(f'Your IP Address is {ip_address}')
+
             
-            if 'wikipedia' in statement:
+         elif 'wikipedia' in statement:
             speak('Searching Wikipedia...')
             statement =statement.replace("wikipedia", "")
             results = wikipedia.summary(statement, sentences=3)
             speak("According to Wikipedia")
             print(results)
             speak(results)
-
+       
         elif 'open youtube' in statement:
             webbrowser.open_new_tab("https://www.youtube.com")
             speak("Opening Youtube....")
@@ -132,15 +143,20 @@ if __name__=='__main__':
             news = webbrowser.open_new_tab("https://ndtv.com")
             speak('Here are some latest headlines')
             time.sleep(6)
-
+  
         elif "log off" in statement or "sign out" in statement:
             speak("Logging off all applications...")
             subprocess.call(["shutdown", "/l"])
 
             time.sleep(3)
 
-
-
+            
+         ## Email Feature (Saket) 
+        
+        
+        
+        
+        
 
 
          ## Whatsapp Messaging Feature (Kirushak) 
@@ -156,9 +172,16 @@ if __name__=='__main__':
        ##Conversation and Random Module Feature (Sanjay)
 
                   
+   def get_random_advice():
+    res = requests.get("https://api.adviceslip.com/advice").json()
+    return res['slip']['advice']
                   
-                  
-      
+      elif "advice" in query:
+            speak(f"Here's an advice for you, sir")
+            advice = get_random_advice()
+            speak(advice)
+            speak("Printing the advice on the screen.")
+            pprint(advice)
                   
                   
                   
