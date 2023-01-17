@@ -11,6 +11,7 @@ import requests
 import pywhatkit
 from random import choice
 from pprint import pprint
+import smtplib
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -71,7 +72,7 @@ if __name__=='__main__':
             break
 
             
-            ## Code for opening local applications on host's device (Saket)
+            ## GUI with all the features including opening local host applications (Saket, Sanjay, Bhashay) - Built for windows only
 
             
             
@@ -113,7 +114,15 @@ if __name__=='__main__':
         elif "open facebook" in statement:
             webbrowser.open_new_tab("https://facebook.com/login")
             speak("Opening Facebook....")
-   
+            
+       elif "open discord" in statement:
+            webbrowser.open_new_tab("https://discord.com/channels/@me")
+            speak("Opening Discord....")
+            
+        elif "open whatsapp" in statement:
+            webbrowser.open_new_tab("https://web.whatsapp.com/")
+            speak("Opening Whatsappp....")
+            
         elif "open instagram" in statement:
             webbrowser.open_new_tab("https://instagram.com/login")
             speak("Opening Instagram....")
@@ -150,12 +159,27 @@ if __name__=='__main__':
 
             time.sleep(3)
 
-            
          ## Email Feature (Saket) 
         
         
         
         
+def email(self):
+    """Sending email through voice"""
+    speak("What is the content of the email?")
+    self.query = self.voicecom().lower()
+
+    gmail = input("Enter your email address: ")
+    password = input("Enter your password: ")
+    send_to_person = input("Enter the receiver email address:")
+    message = self.query
+
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login(gmail, password)
+    server.sendmail(gmail, send_to_person, message)
+    server.quit()
+    speak("email has been sent to %s" % send_to_person)
         
 
 
