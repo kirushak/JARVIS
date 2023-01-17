@@ -1,17 +1,18 @@
-import speech_recognition as sr
+import speech_recognition as sr  # pip install speechRecognition
 import pyttsx3
 import datetime
-import wikipedia
-import webbrowser
-import os
+import wikipedia  # pip install wikipedia
+import webbrowser # pip install web browser
+import os 
 import time
 import subprocess
-import wolframalpha
+import wolframalpha # pip install wolframalpha
 import requests
-import pywhatkit
-from random import choice
+import pywhatkit 
+from random import choice 
 from pprint import pprint
-import smtplib
+import smtplib  # pip install smtplib
+import pyjokes  # pip install pyjokes
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -85,8 +86,7 @@ if __name__=='__main__':
             ip_address = find_my_ip()
             speak(f'Your IP Address is {ip_address}.\n Printing your IP address on the screen.')
             print(f'Your IP Address is {ip_address}')
-
-            
+        
          elif 'wikipedia' in statement:
             speak('Searching Wikipedia...')
             statement =statement.replace("wikipedia", "")
@@ -142,6 +142,8 @@ if __name__=='__main__':
             webbrowser.open_new_tab(statement)
             time.sleep(5)
             
+            
+            
            
         elif 'time' in statement:
             strTime=datetime.datetime.now().strftime("%H:%M:%S")
@@ -158,13 +160,9 @@ if __name__=='__main__':
             subprocess.call(["shutdown", "/l"])
 
             time.sleep(3)
-
-         ## Email Feature (Saket) 
-        
-        
-        
-        
-def email(self):
+       
+           
+def email():
     """Sending email through voice"""
     speak("What is the content of the email?")
     self.query = self.voicecom().lower()
@@ -180,8 +178,15 @@ def email(self):
     server.sendmail(gmail, send_to_person, message)
     server.quit()
     speak("email has been sent to %s" % send_to_person)
+       
         
-
+def jokes():
+    """tells joke"""
+    joke = pyjokes.get_joke()
+    speak(joke)
+    
+    
+    
 
          ## Whatsapp Messaging Feature (Kirushak) 
                   
