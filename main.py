@@ -76,10 +76,9 @@ if __name__=='__main__':
             ## GUI with all the features including opening local host applications (Saket, Sanjay, Bhashay) - Built for windows only
 
             
-            
-         def find_my_ip():
-           ip_address = requests.get('https://api64.ipify.org?format=json').json()
-           return ip_address["ip"]
+ def find_my_ip():
+    ip_address = requests.get('https://api64.ipify.org?format=json').json()
+    return ip_address["ip"]
         
         
          if 'ip address' in statement:
@@ -210,7 +209,7 @@ def date():
        ##Conversation and Random Module Feature (Sanjay and Kirushak)
 
                   
-   def get_random_advice():
+def get_random_advice():
     res = requests.get("https://api.adviceslip.com/advice").json()
     return res['slip']['advice']
                   
