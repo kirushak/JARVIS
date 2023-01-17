@@ -182,6 +182,17 @@ def jokes():
     """tells joke"""
     joke = pyjokes.get_joke()
     speak(joke)
+
+
+def date():
+    """Returns present date"""
+    year = int(datetime.datetime.now().year)
+    month = int(datetime.datetime.now().month)
+    date1 = int(datetime.datetime.now().day)
+    speak("the current date is")
+    speak(date1)
+    speak(month)
+    speak(year)
     
     
     
