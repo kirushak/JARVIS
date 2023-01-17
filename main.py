@@ -115,7 +115,7 @@ if __name__=='__main__':
             webbrowser.open_new_tab("https://facebook.com/login")
             speak("Opening Facebook....")
             
-       elif "open discord" in statement:
+        elif "open discord" in statement:
             webbrowser.open_new_tab("https://discord.com/channels/@me")
             speak("Opening Discord....")
             
@@ -127,22 +127,20 @@ if __name__=='__main__':
             webbrowser.open_new_tab("https://instagram.com/login")
             speak("Opening Instagram....")
             
-          elif "open twitter" in statement:
+        elif "open twitter" in statement:
             webbrowser.open_new_tab("https://twitter.com/login")
             speak("Opening Twitter....")
             
             
-            elif "open github" in statement:
+        elif "open github" in statement:
             webbrowser.open_new_tab("https://github.com/login")
             speak("Opening Github....")
            
          
-          elif 'search'  in statement:
+        elif 'search'  in statement:
             statement = statement.replace("search", "")
             webbrowser.open_new_tab(statement)
             time.sleep(5)
-            
-            
             
            
         elif 'time' in statement:
