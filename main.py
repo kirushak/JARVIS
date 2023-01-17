@@ -169,7 +169,7 @@ if __name__=='__main__':
                   
                   
                   
-       ##Conversation and Random Module Feature (Sanjay)
+       ##Conversation and Random Module Feature (Sanjay and Kirushak)
 
                   
    def get_random_advice():
