@@ -160,7 +160,6 @@ if __name__=='__main__':
        
            
 def email():
-    """Sending email through voice"""
     speak("What is the content of the email?")
     self.query = self.voicecom().lower()
 
@@ -178,13 +177,11 @@ def email():
        
         
 def jokes():
-    """tells joke"""
-    joke = pyjokes.get_joke()
+    joke = pyjokes.get_joke()       
     speak(joke)
 
 
 def date():
-    """Returns present date"""
     year = int(datetime.datetime.now().year)
     month = int(datetime.datetime.now().month)
     date1 = int(datetime.datetime.now().day)
