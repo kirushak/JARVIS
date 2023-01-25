@@ -1,0 +1,44 @@
+		
+import ctypes
+import subprocess
+import winshell
+import time
+import webbrowser	
+						
+		
+elif 'lock window' in query:
+	speak("locking the device")
+	ctypes.windll.user32.LockWorkStation()
+
+elif 'shutdown system' in query:
+	speak("Hold On a Sec ! Your system is on its way to shut down")
+	subprocess.call(["shutdown", "/s"])
+				
+elif 'empty recycle bin' in query:
+	winshell.recycle_bin().empty(confirm = False, show_progress = False, sound = True)
+	speak("Recycle Bin Recycled")
+
+elif "don't listen" in query or "stop listening" in query:
+	speak("for how much time you want to stop jarvis from listening commands")
+	a = int(takeCommand())
+	time.sleep(a)
+	print(a)
+
+elif "locate me jarvis" in query or "locate me" in query:
+	query = query.replace("where is", "")
+	location = query
+	webbrowser.open("https://earth.google.com/web/")
+            
+	speak("connecting to the satelite and sending information to the server securing connection.here you are sir")
+
+elif "restart" in query:
+	subprocess.call(["shutdown", "/r"])
+			
+elif "sleep" in query:
+	speak("sleeping")
+	subprocess.call("shutdown / h")
+
+elif "log off" in query or "sign out" in query:
+	speak("Make sure all the application are closed before sign-out")
+	time.sleep(5)
+	subprocess.call(["shutdown", "/l")
